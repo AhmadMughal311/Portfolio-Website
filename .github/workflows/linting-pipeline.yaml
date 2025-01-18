@@ -1,5 +1,4 @@
 name: Linting Pipeline
-
 on:
   push:
     branches:
@@ -7,11 +6,9 @@ on:
   pull_request:
     branches:
       - develop
-
 jobs:
   linting-job:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -23,5 +20,3 @@ jobs:
         run: npx htmlhint "**/*.html"
       - name: Lint CSS files
         run: npx stylelint "**/*.css"
-
-        
